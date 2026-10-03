@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>游戏部 · 聊天室</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════ 顶栏 ══════════ -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="brand">游戏部<span>聊天室</span></span>
+      <div class="room-switch">
+        <label>房间</label>
+        <input type="text" id="room-input" placeholder="default" value="game-dept">
+        <button class="btn btn-sm" id="btn-switch-room">切换</button>
+      </div>
+      <span class="conn" id="conn-status">连接中…</span>
+    </div>
+  </header>
+
+  <main class="app">
+
+    <!-- ══════════ 左侧：会话/联系人列表 ══════════ -->
+    <aside class="side" id="side">
+      <div class="side-head">
+        <input type="search" id="side-search" placeholder="搜索会话…" aria-label="搜索">
+        <button class="btn btn-sm" id="btn-rename-self" title="改我的昵称">✎ 我</button>
+      </div>
+
+      <!-- 我的信息卡 -->
+      <div class="me-card">
+        <div class="avatar" id="me-avatar">游</div>
+        <div class="me-info">
+          <strong id="me-name">…</strong>
+          <small id="me-uid"></small>
+        </div>
+      </div>
+
+      <!-- 群聊入口 -->
+      <div class="room-title">群聊</div>
+      <ul class="room-list" id="room-list"></ul>
+
+      <!-- 成员列表（当前房间） -->
+      <div class="room-title">在线成员 <span class="count" id="member-count">0</span></div>
+      <ul class="member-list" id="member-list"></ul>
+    </aside>
+
+    <!-- ══════════ 右侧：聊天窗口 ══════════ -->
+    <section class="chat">
+      <div class="chat-head">
+        <div class="chat-head-info">
+          <div class="avatar avatar-lg" id="room-avatar">游</div>
+          <div>
+            <strong id="room-name">游戏部</strong>
+            <small id="room-sub">加载中…</small>
+          </div>
+        </div>
+        <button class="btn btn-sm" id="btn-copy-room-link" title="复制房间链接（发给队友）">🔗 分享</button>
+      </div>
+
+      <!-- 消息区 -->
+      <div class="msgs" id="msgs"></div>
+
+      <!-- 表情选择器 -->
+      <div class="emoji-pop" id="emoji-pop" hidden>
+        <div class="emoji-grid" id="emoji-grid"></div>
+      </div>
+
+      <!-- 输入区 -->
+      <div class="composer">
+        <button class="icon-btn" id="btn-emoji" title="表情">😊</button>
+        <textarea id="msg-input" rows="3" placeholder="输入消息，Enter 发送，Shift+Enter 换行"></textarea>
+        <button class="btn btn-primary" id="btn-send">发送</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>游戏部聊天室 · 消息存 Cloudflare KV · 轮询间隔 2s · <span id="footer-room"></span></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
