@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏部 · 团队站</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════ 顶部 Hero：背景图区域 ═══════════════
+        ★ 把你的背景图片保存到  team/img/bg.jpg（或 bg.png）
+          刷新页面自动生效，不用改任何代码。 -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">游戏部</h1>
+      <p class="hero-sub">我们的团队小站 —— 记录项目、想法与日常</p>
+    </div>
+
+    <!-- 背景图出处标注（填出处表单后自动更新这里） -->
+    <div class="hero-caption" id="hero-caption">
+      <span>🖼 背景图：<em>待标注</em></span>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- ═══════════════ 图片出处标注区 ═══════════════ -->
+    <section class="card" id="source-card">
+      <h2>背景图出处 <small>（请如实填写，尊重原作者）</small></h2>
+      <form id="source-form">
+        <div class="form-grid">
+          <label>图片来源
+            <input type="text" name="src" placeholder="如：Unsplash / 团队自制 / 同学拍摄">
+          </label>
+          <label>作者 / 团队
+            <input type="text" name="author" placeholder="如：@someone / 摄影社">
+          </label>
+          <label>许可证
+            <input type="text" name="license" placeholder="如：CC BY 4.0 / 个人使用 / 已获授权">
+          </label>
+          <label>原图链接（可选）
+            <input type="text" name="url" placeholder="https://...">
+          </label>
+        </div>
+        <label class="full">备注（可选）
+          <textarea name="note" rows="2" placeholder="如：拍摄时间、调色说明等"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">保存出处</button>
+          <button type="button" class="btn" id="btn-reset-source">清空</button>
+          <p class="hint" id="source-status">尚未填写：hero 右下角显示「待标注」。</p>
+        </div>
+      </form>
+    </section>
+
+    <!-- ═══════════════ 写文章的地方 ═══════════════ -->
+    <section class="card" id="write-card">
+      <h2>写点什么 ✍ 团队文章</h2>
+      <div class="editor">
+        <input type="text" id="post-title" class="post-title"
+               placeholder="文章标题，例如：《游戏部第一次开发会议记录》" maxlength="60">
+        <textarea id="post-body" rows="10"
+                  placeholder="正文写在这里。支持空行分段；「# 开头」的小标题、「- 开头」的列表会渲染成对应样式。"></textarea>
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="btn-publish">发布文章</button>
+          <button class="btn" id="btn-clear-post">清空</button>
+          <span class="hint" id="post-status"></span>
+        </div>
+      </div>
+
+      <!-- 已发布文章列表 -->
+      <div class="posts">
+        <h3>已发布 <span class="count" id="post-count">0</span> 篇</h3>
+        <div class="share-tools" id="share-tools" hidden>
+          <button class="btn" id="btn-export">导出文章 (JSON)</button>
+          <button class="btn" id="btn-import">导入文章 (JSON)</button>
+          <input type="file" id="import-file" accept=".json" hidden>
+          <p class="hint">跨设备同步：点「导出」把 .json 发给队友，对方点「导入」即可看到同样内容。</p>
+        </div>
+        <ul id="post-list"></ul>
+        <p class="empty" id="post-empty">还没有文章。写一篇吧 —— 发布后存在本浏览器；用导出/导入分享给队友。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>游戏部 团队站 · 双击 index.html 即可打开，纯静态零依赖</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

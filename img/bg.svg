@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <!-- 占位背景图（渐变 + 网格纹理）。把你的图片直接保存为同目录 bg.jpg 即可替换；
+       本 SVG 只是占位，方便没有图片时页面也能正常显示。 -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a52"/>
+      <stop offset="55%" stop-color="#1e4f8f"/>
+      <stop offset="100%" stop-color="#3f2d8f"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#g)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <circle cx="1500" cy="300" r="260" fill="rgba(255,255,255,.05)"/>
+  <circle cx="420" cy="820" r="180" fill="rgba(255,255,255,.04)"/>
+  <text x="960" y="540" font-family="Segoe UI, Microsoft YaHei, sans-serif"
+        font-size="34" fill="rgba(255,255,255,.35)" text-anchor="middle">
+    把你的背景图保存为 team\img\bg.jpg 后刷新
+  </text>
+</svg>
